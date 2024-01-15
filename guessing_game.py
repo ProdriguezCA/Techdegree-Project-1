@@ -1,11 +1,12 @@
 import random
 
+high_score = 8
 
 def start_game():
     winning_number = random.randrange(1,10)
     guess = 0
     attempts = 1
-    high_score = 8
+    global high_score 
     
     print("\nWelcome To The Number Guessing Game!")
     print("\nCurrent High Score is:", high_score)
@@ -43,7 +44,7 @@ def start_game():
                 high_score = attempts
                 print("\nCongratulations! New High Score: {}".format(high_score))
             else:
-                print("\nCurrent High score is: {}! can you beat it?".format(high_score))
+                print("\nCurrent High score is: {}! Can you beat it?".format(high_score))
             
             
             #retry menu for when game ends and ask the player to play again or end the game.
@@ -53,11 +54,11 @@ def start_game():
                 print("\nPlease enter only Y or N.")
                 
             elif retry.lower() == "y":
-                print("\nGame is restarting!")
+                print("\nGame Is Restarting!")
                 return start_game()
             
             else:
-                print("\nThanks for playing, please come again!")
+                print("\nThanks for playing, Please come again!")
                 quit()  
 
 start_game()
